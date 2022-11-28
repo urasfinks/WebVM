@@ -21,7 +21,7 @@
         <tr *ngFor="let curVm of vm">
           <td>{{curVm["id"]}}</td>
           <td>{{curVm["iso"]}}</td>
-          <td>{{curVm["portRouter"]}}</td>
+          <td>{{curVm["rdpInfo"]}}</td>
           <td>{{curVm["login"]}}</td>
           <td style="cursor: pointer;" (click)="toggle(curVm)">{{mask(curVm)}}</td>
           <td>{{curVm["dateAdd"] | date :'short'}}</td>
