@@ -11,3 +11,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .text-bg-dark{
   background: #444444 !important;
 }
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+.mat-mdc-select-value-text {
+  font-size: 90% !important;
+}
+.mat-mdc-option .mdc-list-item__primary-text {
+  font-size: 90% !important;
+}

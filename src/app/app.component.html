@@ -20,66 +20,122 @@
   <br>
 -->
 
-  <header>
-    <div class="px-3 py-2 text-bg-dark">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none h3">
-            WebVM
-          </a>
+<header>
+  <div class="px-3 py-2 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none h3">
+          WebVM
+        </a>
 
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li>
-              <a href="/" class="nav-link text-secondary small">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor"><use xlink:href="bootstrap-icons.svg#house-door"/></svg>
-                Главная
-              </a>
-            </li>
-            <li>
-              <a href="/vm" class="nav-link text-white small">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor"><use xlink:href="bootstrap-icons.svg#speedometer2"/></svg>
-                Сервера
-              </a>
-            </li>
-            <li>
-              <a href="/task" class="nav-link text-white small">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor"><use xlink:href="bootstrap-icons.svg#table"/></svg>
-                Заказы
-              </a>
-            </li>
-            <li>
-              <a href="/product" class="nav-link text-white small">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor"><use xlink:href="bootstrap-icons.svg#grid"/></svg>
-                Продукты
-              </a>
-            </li>
-            <li>
-              <a href="/customer" class="nav-link text-white small">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor"><use xlink:href="bootstrap-icons.svg#person-circle"/></svg>
-                Клиенты
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+            <a href="/" class="nav-link text-secondary small">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="bootstrap-icons.svg#house-door"/>
+              </svg>
+              Главная
+            </a>
+          </li>
+          <li>
+            <a href="/vm" class="nav-link text-white small">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="bootstrap-icons.svg#speedometer2"/>
+              </svg>
+              Сервера
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white small">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="bootstrap-icons.svg#table"/>
+              </svg>
+              Заказы
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white small">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="bootstrap-icons.svg#grid"/>
+              </svg>
+              Продукты
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white small">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="bootstrap-icons.svg#person-circle"/>
+              </svg>
+              Клиенты
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-center">
-        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+  </div>
+  <div class="px-3 py-2 border-bottom mb-3">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
 
-        </form>
+      </form>
 
-        <div class="text-end">
-          <a *ngIf="!authService.isLogin()" href="/login" type="button" class="btn btn-primary small me-3 border-0">Вход</a>
-        </div>
-        <div class="text-end">
-          <button *ngIf="authService.isLogin()" (click)="authService.logout()" type="button" class="btn btn-secondary text-bg-dark small me-3 border-0">Выход</button>
-        </div>
+      <div class="text-end">
+        <a *ngIf="!authService.isLogin()" href="/login" type="button"
+           class="btn btn-primary small me-3 border-0">Вход</a>
+      </div>
+      <div class="text-end">
+        <button *ngIf="authService.isLogin()" (click)="authService.logout()" type="button"
+                class="btn btn-secondary text-bg-dark small me-3 border-0">Выход
+        </button>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+  <div class="container col-8">
+
+    <div class="row">
+      <div class="col-12 col-md">
+        <h1>WebVM</h1>
+        <small class="d-block mb-3 text-muted">© 2022</small>
+      </div>
+      <div class="col-6 col-md">
+        <h2>Features</h2>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h2>Resources</h2>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h2>About</h2>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
 

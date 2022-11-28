@@ -1,6 +1,17 @@
 {
-  "/api":
-  {
+  "/api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/TaskByIdClient": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/VirtualServerByIdClient": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/Task": {
     "target": "http://localhost:8080",
     "secure": false
   }

@@ -1,1 +1,108 @@
-<p>vm works!</p>
+<div class="row container">
+  <div class="col-9">
+
+    <h2>Виртуальные машины</h2>
+
+    <div *ngIf="vm.length > 0" class="card p-2">
+      <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ОС</th>
+          <th scope="col">Точка подключения</th>
+          <th scope="col">Логин</th>
+          <th scope="col">Пароль</th>
+          <th scope="col">Дата создания</th>
+          <th scope="col">Статус</th>
+          <th scope="col">Дата статуса</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let curVm of vm">
+          <td>{{curVm["id"]}}</td>
+          <td>{{curVm["iso"]}}</td>
+          <td>{{curVm["portRouter"]}}</td>
+          <td>{{curVm["login"]}}</td>
+          <td style="cursor: pointer;" (click)="toggle(curVm)">{{mask(curVm)}}</td>
+          <td>{{curVm["dateAdd"] | date :'short'}}</td>
+          <td>{{aboutStatusVM(curVm["status"])}}</td>
+          <td>{{curVm["vmStatusDate"] | date :'short'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="vm.length == 0">
+      Нет серверов
+    </div>
+
+    <br>
+    <h2>Создать заявку</h2>
+
+
+    <mat-form-field>
+      <mat-label>Тип заявки</mat-label>
+      <mat-select [(ngModel)]="typeTask">
+        <mat-option *ngFor="let t of availableTypeTask" [value]="t.id">
+          {{t.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="typeTask == 1">
+      <mat-label>Операционная система</mat-label>
+      <mat-select [(ngModel)]="typeOs">
+        <mat-option *ngFor="let t of availableTypeOs" [value]="t.id">
+          {{t.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="typeTask == 2">
+      <mat-label>Действие</mat-label>
+      <mat-select [(ngModel)]="typeCommand">
+        <mat-option *ngFor="let t of availableTypeCommand" [value]="t.id">
+          {{t.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="typeTask == 2">
+      <mat-label>Виртуальная машина</mat-label>
+      <mat-select [(ngModel)]="typeVm">
+        <mat-option *ngFor="let t of vm" [value]="t['id']">
+          {{t['id']}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+     <br>
+
+    <button class="btn btn-primary mt-3 small border-0" type="button" (click)="createTask()">
+      <svg class="bi me-1" width="15" height="15" fill="currentColor"><use xlink:href="bootstrap-icons.svg#plus"/></svg>
+      Создать заявку
+    </button>
+
+  </div>
+  <div class="col-3">
+    <h2>Заявки</h2>
+
+    <div class="card mb-3" *ngFor="let curTask of task">
+      <div class="card-header">
+        <div class="toast-header">
+          <span class="me-auto">[#{{curTask["id"]}}] {{curTask["dateAdd"] | date :'short'}}</span>
+          <small>{{calculateDiff(curTask["dateAdd"])}} mins ago</small>
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{aboutTask(curTask["task"], curTask)}}</h5>
+        <span class="spinner-border spinner-border-sm mx-1" role="status"></span> {{aboutStatusTask(curTask["status"])}}
+      </div>
+    </div>
+
+    <div *ngIf="task.length == 0">
+      Нет заявок на обработку
+    </div>
+
+  </div>
+</div>

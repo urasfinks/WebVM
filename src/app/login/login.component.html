@@ -5,6 +5,26 @@
     <div class="col-lg-7 text-center text-lg-start">
       <h1 class="display-4 fw-bold lh-1 mb-4">Vertically centered hero sign-up form</h1>
       <p class="col-lg-10 fs-6 pt-1">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+
+      <hr class="my-4">
+      <h2 class="fs-5 fw-bold m-2">Or use a third-party Sign up</h2>
+      <button class="btn btn-outline-dark rounded-3 m-2" type="submit">
+        <svg class="bi me-1" width="16" height="16"><use xlink:href="bootstrap-icons.svg#twitter"/></svg>
+        Twitter
+      </button>
+      <button class="btn btn-outline-dark rounded-3 m-2" type="submit">
+        <svg class="bi me-1" width="16" height="16"><use xlink:href="bootstrap-icons.svg#facebook"/></svg>
+        Facebook
+      </button>
+      <button class="btn btn-outline-dark rounded-3 m-2" type="submit">
+        <svg class="bi me-1" width="16" height="16"><use xlink:href="bootstrap-icons.svg#github"/></svg>
+        GitHub
+      </button>
+
+
+
+
+
     </div>
     <div class="col-md-10 mx-auto col-lg-5">
       <main class="form-signin w-100 m-auto">
@@ -28,7 +48,7 @@
             </label>
           </div>
           <button class="w-100 btn btn-lg btn-primary" (click)="login()">Войти</button>
-          <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+
         </form>
       </main>
     </div>
