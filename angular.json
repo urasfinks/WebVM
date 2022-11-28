@@ -27,12 +27,26 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "bootstrap-icons.svg",
+                "input": "./node_modules/bootstrap-icons/",
+                "output": "/"
+              }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/bootstrap-icons/font/bootstrap-icons.scss",
+              "./node_modules/@ng-select/ng-select/themes/default.theme.css",
+              "./node_modules/material-icons/iconfont/material-icons.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,6 +107,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
