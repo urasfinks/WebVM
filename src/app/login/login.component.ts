@@ -14,7 +14,7 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
-              private router: Router) {
+              ) {
 
     this.form = this.fb.group({
       email: ['', Validators.required],
@@ -26,15 +26,7 @@ export class LoginComponent {
     const val = this.form.value;
 
     if (val.email && val.password) {
-      this.authService.login(val.email, val.password)
-        .subscribe(
-          (response) => {
-            // @ts-ignore
-            if (response.status == "OK") {
-              this.router.navigateByUrl('/');
-            }
-          }
-        );
+      this.authService.login(val.email, val.password);
     }
   }
 

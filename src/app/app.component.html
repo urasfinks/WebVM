@@ -19,7 +19,7 @@
   </nav>
   <br>
 -->
-  <div>{{authService.isLogin()}}</div>
+
   <header>
     <div class="px-3 py-2 text-bg-dark">
       <div class="container">
@@ -70,7 +70,10 @@
         </form>
 
         <div class="text-end">
-          <a href="/login" type="button" class="btn btn-primary small me-3">Вход</a>
+          <a *ngIf="!authService.isLogin()" href="/login" type="button" class="btn btn-primary small me-3 border-0">Вход</a>
+        </div>
+        <div class="text-end">
+          <button *ngIf="authService.isLogin()" (click)="authService.logout()" type="button" class="btn btn-secondary text-bg-dark small me-3 border-0">Выход</button>
         </div>
       </div>
     </div>

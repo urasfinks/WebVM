@@ -1,5 +1,4 @@
 
-
 .basic-2 {
   padding-top: 3rem;
   text-align: center;
@@ -68,11 +67,6 @@
 }
 
 
-
-
-
-
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -122,4 +116,10 @@
   text-align: center;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+}
+
+
+.bg {
+  background: url('/assets/header-illustration.svg') center right no-repeat;
+  min-height: 430px;
 }

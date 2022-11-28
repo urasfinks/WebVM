@@ -1,24 +1,36 @@
-<main class="form-signin w-100 m-auto">
-  <form [formGroup]="form">
-    <h1 class="h3 mb-3 fw-normal">Введите данные для входа</h1>
 
-    <div class="form-floating">
-      <input type="email" name="email" formControlName="email" class="form-control" id="floatingInput"
-             placeholder="name@example.com">
-      <label for="floatingInput">Email адрес</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" name="password" formControlName="password" class="form-control" id="floatingPassword"
-             placeholder="Пароль">
-      <label for="floatingPassword">Пароль</label>
-    </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input class="form-check-input" type="checkbox" value="remember-me">&nbsp;&nbsp;Запомнить
-      </label>
+<div class="container py-5 col-10">
+  <div class="row g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 mb-4">Vertically centered hero sign-up form</h1>
+      <p class="col-lg-10 fs-6 pt-1">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" (click)="login()">Войти</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
-  </form>
-</main>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <main class="form-signin w-100 m-auto">
+        <form [formGroup]="form">
+          <h1 class="display-4 fw-bold lh-1 mb-4">Введите данные для входа</h1>
+
+          <div class="form-floating">
+            <input type="email" name="email" formControlName="email" class="form-control" id="floatingInput"
+                   placeholder="name@example.com">
+            <label for="floatingInput">Email адрес</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" name="password" formControlName="password" class="form-control" id="floatingPassword"
+                   placeholder="Пароль">
+            <label for="floatingPassword">Пароль</label>
+          </div>
+
+          <div class="checkbox mb-3">
+            <label>
+              <input class="form-check-input" type="checkbox" value="remember-me">&nbsp;&nbsp;Запомнить
+            </label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" (click)="login()">Войти</button>
+          <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+        </form>
+      </main>
+    </div>
+  </div>
+</div>
