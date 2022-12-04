@@ -32,7 +32,7 @@ export class VmComponent {
   public availableTypeCommand: Array<any> = [
     {id: 1, name: 'Перезагрузить'},
     {id: 2, name: 'Выключить'},
-    {id: 3, name: 'Вклочить'},
+    {id: 3, name: 'Включить'},
     {id: 4, name: 'Сбросить питание'}
   ];
 
